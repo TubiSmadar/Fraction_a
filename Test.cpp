@@ -28,9 +28,9 @@ TEST_CASE("Check's the + operator")
     Fraction x_f(5,10);
     CHECK(x_f.getNumirator() == 1);
     CHECK(x_f.getDenomirator() == 2);
-    double y = 0.1;
+    float y = 0.1;
     Fraction y_f(y);
-    double z = 0.6;
+    float z = 0.6;
     Fraction z_f(z);
     CHECK((x_f+y_f) == z_f);
 
@@ -52,9 +52,9 @@ TEST_CASE("Check's the - operator")
     Fraction x_f(5,10);
     CHECK(x_f.getNumirator() == 1);
     CHECK(x_f.getDenomirator() == 2);
-    double y = 0.1;
+    float y = 0.1;
     Fraction y_f(y);
-    double z = 0.4;
+    float z = 0.4;
     Fraction z_f(z);
     CHECK((x_f - y_f) == z_f);
 }
@@ -62,8 +62,8 @@ TEST_CASE("Check's the - operator")
 TEST_CASE("Check's the * operator")
 {
     Fraction a(1,3);
-    double b = 0.0;
-    double c = 1.1;
+    float b = 0.0;
+    float c = 1.1;
     CHECK( a * b  == b);
     CHECK( a * b == c * b);
     Fraction x(1,2);
