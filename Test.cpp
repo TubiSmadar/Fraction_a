@@ -120,3 +120,19 @@ TEST_CASE("Check's the ++ and -- operators"){
     --b;
     CHECK(--a == b);
 }
+TEST_CASE("Check's overflow"){
+    CHECK_THROWS(Fraction (1,INT32_MIN-1));
+    CHECK_THROWS(Fraction (INT32_MIN-1,1));
+    Fraction a(1,1);
+    Fraction b(INT32_MAX,1);
+    CHECK_THROWS(a+b);
+    Fraction c(1,1);
+    Fraction d(1,INT32_MAX);
+    CHECK_THROWS(a+b);
+    Fraction x(INT32_MIN,1);
+    CHECK_THROWS(x-1);
+    Fraction g((float)INT32_MAX);
+    CHECK_THROWS(g + 1);
+    Fraction m(INT32_MIN);
+    CHECK_THROWS(m - 1);
+}
